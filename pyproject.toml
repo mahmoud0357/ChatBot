@@ -1,0 +1,33 @@
+[project]
+name = "querymancer"
+version = "0.1.0"
+description = "AI agent that lets you to talk to your database"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=0.3.21",
+    "langchain-core>=0.3.1",
+    "langchain-community>=0.0.30",
+    "langchain-ollama>=0.1.0",
+    "pydantic>=2.11.1",
+    "python-dotenv>=1.0.0",
+    "rich>=13.9.4",
+    "streamlit>=1.40.0",
+    "watchdog>=3.0.0"
+]
+
+[dependency-groups]
+dev = [
+    "faker>=37.1.0",
+    "pre-commit>=4.0.1",
+    "ruff>=0.8.3"
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "."
+]

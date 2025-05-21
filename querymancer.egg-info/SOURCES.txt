@@ -1,0 +1,6 @@
+pyproject.toml
+querymancer.egg-info/PKG-INFO
+querymancer.egg-info/SOURCES.txt
+querymancer.egg-info/dependency_links.txt
+querymancer.egg-info/requires.txt
+querymancer.egg-info/top_level.txt

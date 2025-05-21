@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: querymancer
+Version: 0.1.0
+Summary: AI agent that lets you talk to your database
+Requires-Python: >=3.12
+Requires-Dist: langchain>=0.3.21
+Requires-Dist: langchain-groq>=0.3.1
+Requires-Dist: langchain-ollama>=0.3.0
+Requires-Dist: pydantic>=2.11.1
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: rich>=13.9.4
+Requires-Dist: streamlit>=1.44.0
+Requires-Dist: watchdog>=6.0.0
