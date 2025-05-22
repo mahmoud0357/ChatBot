@@ -28,7 +28,6 @@ Your responses should be formatted as Markdown. Prefer using tables or lists for
 Your target audience is business analysts and data scientists who may not be familiar with SQL syntax.
 """.strip()
 
-
 def create_history() -> List[BaseMessage]:
     return [SystemMessage(content=SYSTEM_PROMPT)]
 
@@ -44,12 +43,12 @@ def ask(query: str, history: List[BaseMessage], llm: BaseChatModel, max_iteratio
         response = llm.invoke(messages)
         messages.append(response)
 
-        if not response.tool_calls:
+        if not getattr(response, "tool_calls", None):
             return response.content
 
         for tool_call in response.tool_calls:
-            response = call_tool(tool_call)
-            messages.append(response)
+            tool_response = call_tool(tool_call)
+            messages.append(tool_response)
 
         n_iterations += 1
 
