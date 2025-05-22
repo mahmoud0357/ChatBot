@@ -1,12 +1,10 @@
 import sqlite3
 from contextlib import contextmanager
 from typing import Any, List
-
 from langchain.tools import tool
 from langchain_core.messages import ToolMessage
 from langchain_core.messages.tool import ToolCall
 from langchain_core.tools import BaseTool
-
 from querymancer.config import Config
 from querymancer.logging import log_panel
 from querymancer.logging import log
@@ -14,13 +12,11 @@ from querymancer.logging import log
 def get_available_tools() -> List[BaseTool]:
     return [list_tables, sample_table, describe_table, execute_sql]
 
-
 def call_tool(tool_call: ToolCall) -> Any:
     tools_by_name = {tool.name: tool for tool in get_available_tools()}
     tool = tools_by_name[tool_call["name"]]
     response = tool.invoke(tool_call["args"])
     return ToolMessage(content=response, tool_call_id=tool_call["id"])
-
 
 @contextmanager
 def with_sql_cursor(readonly=True):
@@ -37,7 +33,6 @@ def with_sql_cursor(readonly=True):
     finally:
         cur.close()
         conn.close()
-
 
 @tool(parse_docstring=True)
 def list_tables(reasoning: str) -> str:
