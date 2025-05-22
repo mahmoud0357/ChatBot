@@ -6,3 +6,4 @@ langchain-ollama
 rich
 pandas
 python-dotenv
+langchain_community
