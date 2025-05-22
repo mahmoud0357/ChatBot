@@ -38,7 +38,10 @@ LOADING_MESSAGES = [
 @st.cache_resource(show_spinner=False)
 def get_model() -> BaseChatModel:
     llm = create_llm(Config.MODEL)
-    llm = llm.bind_tools(get_available_tools())
+    try:
+        llm = llm.bind_tools(get_available_tools())
+    except NotImplementedError:
+        pass
     return llm
 
 def load_css(css_file):
@@ -86,7 +89,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
 
 with st.sidebar:
     st.write("# Database Information")
