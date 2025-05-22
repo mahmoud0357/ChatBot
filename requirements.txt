@@ -3,7 +3,6 @@ langchain
 langchain-openai
 langchain-groq
 langchain-ollama
-sqlite3
 rich
 pandas
 python-dotenv
