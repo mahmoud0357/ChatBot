@@ -1,12 +1,9 @@
+import os
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_groq import ChatGroq
 from langchain_ollama import ChatOllama
-from langchain.chat_models import ChatOpenAI  # ✅ نحتاجه لـ OpenRouter
-
+from langchain.chat_models import ChatOpenAI
 from querymancer.config import Config, ModelConfig, ModelProvider
-import os
-
-
 from langchain_openai import ChatOpenAI
 
 def create_llm(model_config: ModelConfig) -> BaseChatModel:
