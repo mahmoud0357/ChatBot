@@ -8,8 +8,7 @@ from pathlib import Path
 class ModelProvider(str, Enum):
     OLLAMA = "ollama"
     GROQ = "groq"
-    OPENROUTER = "openrouter"  # ✅ أضفنا دعم OpenRouter
-
+    OPENROUTER = "openrouter"
 
 @dataclass
 class ModelConfig:
@@ -18,13 +17,11 @@ class ModelConfig:
     provider: ModelProvider
 
 
-# ✅ موديلات جاهزة
 QWEN_2_5 = ModelConfig("qwen2.5", 0.0, ModelProvider.OLLAMA)
 GEMMA_3 = ModelConfig("PetrosStav/gemma3-tools:12b", 0.7, ModelProvider.OLLAMA)
 LLAMA_3_3 = ModelConfig("llama-3.3-70b-versatile", 0.0, ModelProvider.GROQ)
 OPENROUTER_MISTRAL = ModelConfig("mistralai/mistral-small-24b-instruct-2501", 0.7, ModelProvider.OPENROUTER)
 
-# ✅ موديل DeepSeek من OpenRouter
 OPENROUTER_NOUS = ModelConfig(
     name="nousresearch/nous-hermes-2-mixtral-8x7b-dpo",
     temperature=0.7,
@@ -33,7 +30,7 @@ OPENROUTER_NOUS = ModelConfig(
 
 class Config:
     SEED = 42
-    MODEL = OPENROUTER_MISTRAL  # ✅ غيّرنا الموديل المستخدم هنا
+    MODEL = OPENROUTER_MISTRAL 
     OLLAMA_CONTEXT_WINDOW = 2048
 
     class Path:
