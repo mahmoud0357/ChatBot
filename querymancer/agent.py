@@ -1,11 +1,9 @@
 from datetime import datetime
 from typing import List
-
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
-
-from querymancer.logging import green_border_style, log_panel
 from querymancer.tools import call_tool
+from querymancer.logging import green_border_style, log_panel
 
 SYSTEM_PROMPT = f"""
 You are Querymancer, a master database engineer with exceptional expertise in SQLite query construction and optimization.
