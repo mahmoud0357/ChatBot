@@ -1,4 +1,4 @@
-# 🧠💬 Querymancer by Mahmoud Khalid Alkodousy
+# 🧠💬 ChatBot by Mahmoud Khalid Alkodousy
 
 An intelligent AI-powered assistant that **transforms natural language into optimized SQL queries** over your own **SQLite database** using **LangChain**, **LLMs**, and custom tools for smart exploration.
 
